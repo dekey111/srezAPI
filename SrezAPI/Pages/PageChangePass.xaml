@@ -1,0 +1,78 @@
+﻿<Page x:Class="SrezAPI.Pages.PageChangePass"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SrezAPI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageChangePass">
+
+    <Grid Background="#FFE9F3F5">
+        <Border Background="#FFFFFF" Height="400" Width="300"
+                        CornerRadius="20,20,20,20">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Orientation="Vertical">
+                <Image Source="/Resources/lock.png" Width="100" Height="100"/>
+                <TextBlock Text="Восстановление Пароля" FontSize="24"
+                           HorizontalAlignment="Center"/>
+
+                <StackPanel>
+                    <TextBlock Text="Email" Foreground="Gray"
+                                   Margin="35,10,0,0"/>
+                    <TextBox Width="200" IsEnabled="False" x:Name="txbEmail"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Пароль" Foreground="Gray"
+                                   Margin="35,10,0,0"/>
+                    <Grid>
+                        <PasswordBox Width="180" Height="18"
+                                         Name="psbPassF" Margin="0,0,20,0"/>
+                        <TextBox Width="180" Height="18" Margin="0,0,20,0"
+                                     Visibility="Collapsed"
+                                     Name="txbPassF"/>
+                        <Button Margin="182,0,0,0" Width="20" Height="20" BorderBrush="Transparent"
+                                    Name="btnShowPassF" Click="btnShowFPass_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/SrezAPI;component/Resources/eyes.png"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Подтверждение пароля" Foreground="Gray"
+                                   Margin="35,10,0,0"/>
+                    <Grid>
+                        <PasswordBox Width="180" Height="18"
+                                         Name="psbPassS" Margin="0,0,20,0"/>
+                        <TextBox Width="180" Height="18" Margin="0,0,20,0"
+                                     Visibility="Collapsed"
+                                     Name="txbPassS"/>
+                        <Button Margin="182,0,0,0" Width="20" Height="20" BorderBrush="Transparent"
+                                    Name="btnShowPassS" Click="btnShowPassS_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/SrezAPI;component/Resources/eyes.png"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+
+                <Button Content="Восстановить пароль" FontSize="10"
+                        Height="25" Width="200" VerticalContentAlignment="Center"
+                        Margin="0,10,0,0" BorderThickness="0" Click="fostan_click"
+                                Background="#FF304FFD" Foreground="#FFFFFF" Style="{DynamicResource btnMain}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                                    Margin="0,0,0,-70">
+                    <TextBlock Text="Обратно к" FontSize="8"
+                                       VerticalAlignment="Center"/>
+                    <Button Content="Авторизация" 
+                                    Foreground="Blue" FontSize="8" VerticalAlignment="Center"
+                                    BorderBrush="Transparent" Background="Transparent"
+                                    Name="btnLogin" Click="btnLogin_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
